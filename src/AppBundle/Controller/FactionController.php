@@ -96,9 +96,9 @@ class FactionController extends Controller
                 ];
             }
 
-            // Sort the identities alphabetically. 
+            // sort the identities from most points to least 
             usort($decklists, function ($a, $b) {
-                return strcasecmp($a['identity']->getTitle(), $b['identity']->getTitle());
+                return $b['points'] - $a['points'];
             });
 
             $result[] = [
